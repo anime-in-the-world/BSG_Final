@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.birdsenger.controller.MainChatController"
+            prefWidth="1200.0" prefHeight="800.0"
+            styleClass="main-chat-container">
+
+    <!-- TOP: Header Bar -->
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15.0">
+            <padding>
+                <Insets top="15.0" right="20.0" bottom="15.0" left="20.0"/>
+            </padding>
+            <children>
+                <Label text="BirdSenger" styleClass="header-title">
+                    <font><Font name="System Bold" size="20.0"/></font>
+                </Label>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Label fx:id="currentUserLabel" text="User" styleClass="header-user"/>
+                <Button fx:id="logoutButton" text="Logout" styleClass="logout-button"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- LEFT: Conversation List -->
+    <left>
+        <VBox styleClass="conversations-panel" prefWidth="320.0">
+            <children>
+                <!-- Search bar -->
+                <HBox styleClass="search-container" alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets top="10.0" right="15.0" bottom="10.0" left="15.0"/>
+                    </padding>
+                    <children>
+                        <TextField fx:id="searchField" promptText="Search conversations..."
+                                   styleClass="search-input" HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+
+                <!-- Conversations list -->
+                <ListView fx:id="conversationsList" styleClass="conversations-list" VBox.vgrow="ALWAYS"/>
+
+                <!-- New chat button -->
+                <Button fx:id="newChatButton" text="+ New Chat" styleClass="new-chat-button">
+                    <VBox.margin>
+                        <Insets top="10.0" right="15.0" bottom="15.0" left="15.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- CENTER: Chat Area -->
+    <center>
+        <BorderPane styleClass="chat-area">
+            <!-- Chat header -->
+            <top>
+                <HBox styleClass="chat-header" alignment="CENTER_LEFT" spacing="10.0">
+                    <padding>
+                        <Insets top="15.0" right="20.0" bottom="15.0" left="20.0"/>
+                    </padding>
+                    <children>
+                        <VBox spacing="3.0">
+                            <children>
+                                <Label fx:id="chatWithLabel" text="Select a conversation" styleClass="chat-with-name">
+                                    <font><Font name="System Bold" size="16.0"/></font>
+                                </Label>
+                                <Label fx:id="chatStatusLabel" text="" styleClass="chat-status"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </top>
+
+            <!-- Messages area -->
+            <center>
+                <ScrollPane fx:id="messagesScrollPane" styleClass="messages-scroll"
+                            fitToWidth="true" vbarPolicy="ALWAYS" hbarPolicy="NEVER">
+                    <content>
+                        <VBox fx:id="messagesContainer" styleClass="messages-container" spacing="10.0">
+                            <padding>
+                                <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </center>
+
+            <!-- Message input area -->
+            <bottom>
+                <HBox styleClass="message-input-area" alignment="CENTER" spacing="10.0">
+                    <padding>
+                        <Insets top="15.0" right="20.0" bottom="15.0" left="20.0"/>
+                    </padding>
+                    <children>
+                        <TextArea fx:id="messageInput" promptText="Type a message..."
+                                  styleClass="message-input" wrapText="true"
+                                  prefRowCount="2" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="sendButton" text="Send" styleClass="send-button"/>
+                    </children>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </center>
+
+    <!-- Placeholder screen when no conversation selected -->
+    <fx:define>
+        <VBox fx:id="placeholderScreen" alignment="CENTER" spacing="15.0" styleClass="placeholder-screen">
+            <children>
+                <Label text="🐦" styleClass="placeholder-icon">
+                    <font><Font size="80.0"/></font>
+                </Label>
+                <Label text="Welcome to BirdSenger" styleClass="placeholder-title">
+                    <font><Font name="System Bold" size="24.0"/></font>
+                </Label>
+                <Label text="Select a conversation or start a new chat" styleClass="placeholder-subtitle">
+                    <font><Font size="14.0"/></font>
+                </Label>
+            </children>
+        </VBox>
+    </fx:define>
+</BorderPane>

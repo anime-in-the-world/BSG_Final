@@ -1,0 +1,408 @@
+/* ============================================
+   BASE & THEMES
+   ============================================ */
+
+.root-container {
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-spacing: 18;
+}
+
+/* Light & Dark backgrounds */
+.light-theme {
+    -fx-background-color: #f3f4f6;
+}
+.dark-theme {
+    -fx-background-color: #0f172a;
+}
+
+/* ============================================
+   LOGIN/SIGNUP STYLES (Existing)
+   ============================================ */
+
+.app-title {
+    -fx-text-fill: #111827;
+}
+.dark-theme .app-title {
+    -fx-text-fill: #f9fafb;
+}
+.app-subtitle {
+    -fx-text-fill: #6b7280;
+}
+.dark-theme .app-subtitle {
+    -fx-text-fill: #9ca3af;
+}
+
+.form-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: #e5e7eb;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 2);
+    -fx-min-width: 860;
+    -fx-max-width: 860;
+}
+.dark-theme .form-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #1f2937;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 16, 0, 0, 2);
+}
+
+.same-size {
+    -fx-min-height: 420;
+    -fx-pref-height: 420;
+    -fx-max-height: 420;
+}
+
+.form-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111827;
+}
+.dark-theme .form-title {
+    -fx-text-fill: #f3f4f6;
+}
+
+.form-message {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 12px;
+}
+
+.input {
+    -fx-background-color: transparent;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+}
+.input:focused {
+    -fx-border-color: #6366f1;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.25), 10, 0, 0, 1);
+}
+.dark-theme .input {
+    -fx-text-fill: #f3f4f6;
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-border-color: #475569;
+}
+
+.primary-button {
+    -fx-background-color: #f97316;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 15px;
+    -fx-background-radius: 10;
+    -fx-padding: 12 18;
+    -fx-cursor: hand;
+}
+.primary-button:hover {
+    -fx-background-color: #fb923c;
+}
+
+.hyperlink {
+    -fx-text-fill: #2563eb;
+    -fx-underline: false;
+}
+.hyperlink:hover {
+    -fx-underline: true;
+}
+.dark-theme .hyperlink {
+    -fx-text-fill: #93c5fd;
+}
+
+.toggle-label {
+    -fx-text-fill: #111827;
+    -fx-font-size: 12px;
+}
+.dark-theme .toggle-label {
+    -fx-text-fill: #e5e7eb;
+}
+
+.switch {
+    -fx-background-radius: 16;
+    -fx-min-width: 56;
+    -fx-max-width: 56;
+    -fx-min-height: 28;
+    -fx-max-height: 28;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(0,0,0,0.15);
+    -fx-border-radius: 16;
+    -fx-background-color: #cbd5e1;
+}
+.switch:hover {
+    -fx-background-color: #bfc9d6;
+}
+.switch:selected {
+    -fx-background-color: #6366f1;
+    -fx-border-color: rgba(0,0,0,0.2);
+}
+.switch .text {
+    -fx-opacity: 0;
+}
+
+/* ============================================
+   MAIN CHAT INTERFACE STYLES
+   ============================================ */
+
+.main-chat-container {
+    -fx-background-color: #f9fafb;
+}
+.dark-theme .main-chat-container {
+    -fx-background-color: #0f172a;
+}
+
+/* Header Bar */
+.header-bar {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+}
+.dark-theme .header-bar {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+}
+
+.header-title {
+    -fx-text-fill: #f97316;
+}
+
+.header-user {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 14px;
+}
+.dark-theme .header-user {
+    -fx-text-fill: #94a3b8;
+}
+
+.logout-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+.logout-button:hover {
+    -fx-background-color: #dc2626;
+}
+
+/* Conversations Panel */
+.conversations-panel {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 1 0 0;
+}
+.dark-theme .conversations-panel {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+}
+
+.search-container {
+    -fx-background-color: transparent;
+}
+
+.search-input {
+    -fx-background-color: #f3f4f6;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+.dark-theme .search-input {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #f1f5f9;
+    -fx-prompt-text-fill: #64748b;
+}
+
+.conversations-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.conversations-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 12 15;
+    -fx-border-color: #f3f4f6;
+    -fx-border-width: 0 0 1 0;
+}
+.conversations-list .list-cell:selected {
+    -fx-background-color: #f97316;
+}
+.conversations-list .list-cell:hover {
+    -fx-background-color: #fef3e9;
+}
+.dark-theme .conversations-list .list-cell {
+    -fx-border-color: #334155;
+}
+.dark-theme .conversations-list .list-cell:hover {
+    -fx-background-color: #334155;
+}
+
+.new-chat-button {
+    -fx-background-color: #f97316;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 10;
+    -fx-padding: 12 0;
+    -fx-cursor: hand;
+}
+.new-chat-button:hover {
+    -fx-background-color: #fb923c;
+}
+
+/* Chat Area */
+.chat-area {
+    -fx-background-color: white;
+}
+.dark-theme .chat-area {
+    -fx-background-color: #0f172a;
+}
+
+.chat-header {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+}
+.dark-theme .chat-header {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+}
+
+.chat-with-name {
+    -fx-text-fill: #111827;
+}
+.dark-theme .chat-with-name {
+    -fx-text-fill: #f1f5f9;
+}
+
+.chat-status {
+    -fx-text-fill: #10b981;
+    -fx-font-size: 12px;
+}
+
+.messages-scroll {
+    -fx-background-color: #f9fafb;
+}
+.dark-theme .messages-scroll {
+    -fx-background-color: #0f172a;
+}
+
+.messages-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.messages-container {
+    -fx-background-color: transparent;
+}
+
+/* Message Input Area */
+.message-input-area {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1 0 0 0;
+}
+.dark-theme .message-input-area {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+}
+
+.message-input {
+    -fx-background-color: #f3f4f6;
+    -fx-border-color: transparent;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+}
+.message-input:focused {
+    -fx-border-color: #6366f1;
+}
+.dark-theme .message-input {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #f1f5f9;
+    -fx-prompt-text-fill: #64748b;
+}
+
+.send-button {
+    -fx-background-color: #f97316;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-padding: 15 30;
+    -fx-cursor: hand;
+}
+.send-button:hover {
+    -fx-background-color: #fb923c;
+}
+
+/* Placeholder Screen */
+.placeholder-screen {
+    -fx-background-color: transparent;
+}
+
+.placeholder-icon {
+    -fx-text-fill: #d1d5db;
+}
+.dark-theme .placeholder-icon {
+    -fx-text-fill: #475569;
+}
+
+.placeholder-title {
+    -fx-text-fill: #374151;
+}
+.dark-theme .placeholder-title {
+    -fx-text-fill: #cbd5e1;
+}
+
+.placeholder-subtitle {
+    -fx-text-fill: #6b7280;
+}
+.dark-theme .placeholder-subtitle {
+    -fx-text-fill: #64748b;
+}
+
+/* Message Bubbles */
+.message-bubble {
+    -fx-background-radius: 12;
+    -fx-padding: 10 14;
+    -fx-max-width: 500;
+}
+
+.message-sent {
+    -fx-background-color: #f97316;
+}
+
+.message-received {
+    -fx-background-color: #e5e7eb;
+}
+.dark-theme .message-received {
+    -fx-background-color: #334155;
+}
+
+.message-text-sent {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.message-text-received {
+    -fx-text-fill: #111827;
+    -fx-font-size: 14px;
+}
+.dark-theme .message-text-received {
+    -fx-text-fill: #f1f5f9;
+}
+
+.message-time {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 11px;
+}
+
+.message-time-received {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 11px;
+}
+.dark-theme .message-time-received {
+    -fx-text-fill: #94a3b8;
+}
