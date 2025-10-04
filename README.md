@@ -31,7 +31,8 @@ To start the server open the terminal and move to the birdsenger folder and run
 ```
 
 or you can do that in intellij too.
-![alt text](gradle_run.png =300x)
+<img src="gradle_run.png" alt="Gradle panel" width="300">
+
 
 ---
 
