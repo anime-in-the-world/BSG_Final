@@ -20,8 +20,8 @@ public class SocketClient {
 ```
 
 as you can see in the SocketClinet class in the Network folder in Birdsenger.
-If you do want to run it locally Just comment it out and uncomment the localhost l
-ine and if you do that you've start the server locally. The server
+If you do want to run it locally Just comment it out and uncomment the localhost line
+and if you do that you've start the server locally. The server
 and application need to be started seperately.
 
 To start the server open the terminal and move to the birdsenger folder and run
@@ -29,6 +29,9 @@ To start the server open the terminal and move to the birdsenger folder and run
 ```
 ./gradlew runServer
 ```
+
+or you can do that in intellij too.
+![](gradle_run.png =300x)
 
 ---
 
