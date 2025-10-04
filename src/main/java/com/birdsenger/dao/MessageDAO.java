@@ -228,4 +228,39 @@ public class MessageDAO {
 
         return new Message(id, senderId, receiverId, content, type, status, timestamp);
     }
+
+
+
+    /**
+     * Get list of users that current user has conversations with
+     */
+    public List<Integer> getConversationPartners(int userId) {
+        List<Integer> partners = new ArrayList<>();
+        String sql = """
+        SELECT DISTINCT 
+            CASE 
+                WHEN sender_id = ? THEN receiver_id 
+                ELSE sender_id 
+            END as partner_id
+        FROM messages 
+        WHERE sender_id = ? OR receiver_id = ?
+        """;
+
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, userId);
+            pstmt.setInt(3, userId);
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                partners.add(rs.getInt("partner_id"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to get conversation partners: " + e.getMessage());
+        }
+        return partners;
+    }
+
+
+
 }
